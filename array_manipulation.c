@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "shell.h"
+#include "monty.h"
 
 char **make_array(char *buffer, char *del)
 {
