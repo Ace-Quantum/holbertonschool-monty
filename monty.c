@@ -21,6 +21,8 @@ int main(int argc, char *argv[])
         return(-1);
     }
 
+    printf("here's the file name: %s", argv[0]);
+    printf("and the path? %s", argv[1]);
      getline(&buffer, &buffsize, stdin);
         
 }
