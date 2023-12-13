@@ -35,11 +35,11 @@ int main(int argc, char *argv[])
     
     while (fgets(buffer, buffsize, file) != NULL)
     {
-        printf("started while loop");
+        //printf("started while loop");
         token = strtok(buffer, " ");
         while (token != NULL)
         {
-            printf("%s\n", token);
+            //printf("%s\n", token);
             token = strtok(NULL, " ");
         }
     }
