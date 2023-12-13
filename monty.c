@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 
     printf("here's the file name: %s\n", argv[1]);
     
-    while (getline (&buffer, &buffsize, file) != NULL)
+    while (getline (&buffer, &buffsize, file) != -1)
     {
         printf("started while loop");
         token = strtok(buffer, " ");
