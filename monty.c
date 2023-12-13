@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
 {
     size_t buffsize = 1024;
     char *buffer = malloc(buffsize * sizeof(char));
+    FILE *file;
 
     if (argc < 2)
     {
@@ -21,8 +22,12 @@ int main(int argc, char *argv[])
         return(-1);
     }
 
-    printf("here's the file name: %s\n", argv[0]);
-    printf("and the path? %s\n", argv[1]);
-     getline(&buffer, &buffsize, stdin);
+    file = fopen(argv[1], "r");
+
+    printf("assigned file to variable");
+
+    printf("here's the file name: %s\n", argv[1]);
+    
+    printf("%s", file);
         
 }
