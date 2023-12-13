@@ -22,12 +22,23 @@ int main(int argc, char *argv[])
         return(-1);
     }
 
-    file = fopen(argv[1], "r");
+    file = fopen(argv[1], "w+");
+
+    if (fp == NULL)
+        fprintf(stderr, "Unable to open file %s\n", fname);
 
     printf("assigned file to variable");
 
     printf("here's the file name: %s\n", argv[1]);
     
-    printf("%s", file);
+    if (fgets (buffer, 10, file) != NULL)
+    {
+        puts(str);
+    }
+
+    fclose(file);
+
+    return(0);
+    //printf("%s", file);
         
 }
