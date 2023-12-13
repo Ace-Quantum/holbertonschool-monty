@@ -40,8 +40,9 @@ int main(int argc, char *argv[])
         printf("this is the command: %s\n", command);
         while (token != NULL)
         {
+            token = strtok(NULL, " ");
             printf("%s\n", token);
-            data = atoi(strtok(NULL, " "));
+            data = atoi(token);
             printf("this is the number: %d\n", data);
         }
     }
