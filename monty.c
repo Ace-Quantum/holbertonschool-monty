@@ -15,6 +15,7 @@ int main(int argc, char *argv[])
     size_t buffsize = 1024;
     char *buffer = malloc(buffsize * sizeof(char));
     FILE *file;
+    char *token;
 
     if (argc < 2)
     {
@@ -27,18 +28,22 @@ int main(int argc, char *argv[])
     if (file == NULL)
         fprintf(stderr, "Unable to open file\n");
 
-    printf("assigned file to variable");
+    printf("assigned file to variable\n");
 
     printf("here's the file name: %s\n", argv[1]);
     
-    if (fgets (buffer, 10, file) != NULL)
+    while (fgets (buffer, buffsize, file) != NULL)
     {
-        puts(buffer);
+        token = strtok(buffer, " ");
+        while (token != NULL)
+        {
+            printf("%s\n", token);
+            token = strtok(NULL, " ");
+        }
     }
 
     fclose(file);
 
     return(0);
     //printf("%s", file);
-        
 }
