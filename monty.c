@@ -16,7 +16,8 @@ int main(int argc, char *argv[])
     size_t buffsize = 1024;
     char *buffer = malloc(buffsize * sizeof(char));
     FILE *file;
-    char *token;
+    char *command;
+    int num;
 
     if (argc < 2)
     {
@@ -36,11 +37,13 @@ int main(int argc, char *argv[])
     while (fgets(buffer, buffsize, file) != NULL)
     {
         printf("started while loop\n");
-        token = strtok(buffer, " ");
+        command = strtok(buffer, " ");
+        printf("command is: %s\n", command);
         while (token != NULL)
         {
-            printf("%s\n", token);
-            token = strtok(NULL, " ");
+            //printf("%s\n", token);
+            num = atoi(strtok(NULL, " "));
+            printf("number is: %d\n", num);
         }
     }
 
