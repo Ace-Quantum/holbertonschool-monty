@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
     }
 
     fclose(file);
-    free(buffer)
+    free(buffer);
 
     return(0);
 }
