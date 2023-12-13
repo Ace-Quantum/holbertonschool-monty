@@ -24,8 +24,8 @@ int main(int argc, char *argv[])
 
     file = fopen(argv[1], "w+");
 
-    if (fp == NULL)
-        fprintf(stderr, "Unable to open file %s\n", fname);
+    if (file == NULL)
+        fprintf(stderr, "Unable to open file\n");
 
     printf("assigned file to variable");
 
@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
     
     if (fgets (buffer, 10, file) != NULL)
     {
-        puts(str);
+        puts(buffer);
     }
 
     fclose(file);
