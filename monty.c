@@ -15,16 +15,16 @@ int main(int argc, char *argv[])
 {
     size_t buffsize = 1024;
     char *buffer = malloc(buffsize * sizeof(char));
-    FILE *file;
+    FILE *file = fopen(argv[1], "r");
     char *token;
+    char *command;
+    int data;
 
     if (argc < 2)
     {
         printf("Insert error message here\n");
         return(-1);
     }
-
-    file = fopen(argv[1], "r");
 
     if (file == NULL)
         fprintf(stderr, "Unable to open file\n");
@@ -36,11 +36,13 @@ int main(int argc, char *argv[])
     while (fgets(buffer, buffsize, file) != NULL)
     {
         printf("started while loop\n");
-        token = strtok(buffer, " ");
+        command = strtok(buffer, " ");
+        printf("this is the command: %s\n", command);
         while (token != NULL)
         {
             printf("%s\n", token);
-            token = strtok(NULL, " ");
+            data = atoi(strtok(NULL, " "));
+            printf("this is the number: %d\n", data);
         }
     }
 
