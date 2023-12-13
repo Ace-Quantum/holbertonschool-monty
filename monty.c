@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 
     if (argc < 2)
     {
-        printf("Insert error message here");
+        printf("Insert error message here\n");
         return(-1);
     }
 
@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 
     printf("here's the file name: %s\n", argv[1]);
     
-    while (getline (&buffer, &buffsize, file) != -1)
+    while (fgets(buffer, buffsize, file) != NULL)
     {
         printf("started while loop");
         token = strtok(buffer, " ");
