@@ -42,7 +42,8 @@ int main(int argc, char *argv[])
         while (command != NULL)
         {
             //printf("%s\n", token);
-            num = atoi(strtok(NULL, " "));
+            command = strtok(NULL, " ");
+            num = atoi(command);
             printf("number is: %d\n", num);
         }
     }
