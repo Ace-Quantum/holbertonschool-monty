@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
         printf("started while loop\n");
         command = strtok(buffer, " ");
         printf("command is: %s\n", command);
-        while (token != NULL)
+        while (num != NULL)
         {
             //printf("%s\n", token);
             num = atoi(strtok(NULL, " "));
