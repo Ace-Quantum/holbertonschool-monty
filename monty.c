@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
         return(-1);
     }
 
-    file = fopen(argv[1], "w+");
+    file = fopen(argv[1], "r");
 
     if (file == NULL)
         fprintf(stderr, "Unable to open file\n");
@@ -35,17 +35,17 @@ int main(int argc, char *argv[])
     
     while (fgets(buffer, buffsize, file) != NULL)
     {
-        //printf("started while loop");
+        printf("started while loop");
         token = strtok(buffer, " ");
         while (token != NULL)
         {
-            //printf("%s\n", token);
+            printf("%s\n", token);
             token = strtok(NULL, " ");
         }
     }
 
     fclose(file);
+    free(buffer)
 
-    //return(0);
-    //printf("%s", file);
+    return(0);
 }
