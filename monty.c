@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
     
     while (fgets(buffer, buffsize, file) != NULL)
     {
-        printf("started while loop");
+        printf("started while loop\n");
         token = strtok(buffer, " ");
         while (token != NULL)
         {
