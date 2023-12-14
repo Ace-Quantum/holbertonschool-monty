@@ -8,8 +8,8 @@ int main(int argc, char *argv[])
     size_t buffsize = 1024;
     char *buffer = malloc(buffsize * sizeof(char));
     FILE *file;
-    char *token;
-    char *command;
+    char *token = NULL;
+    char *command = NULL;
     int data;
 
     if (argc < 2)
@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
         token = strtok(buffer, " ");
         strcpy(command, token);
         printf("Command: %s\n", command);
-        if (token = strtok(NULL, " "))
+        if (token = strtok(NULL, " ") != NULL)
         {
             data = atoi(token);
             printf("Number: %d\n", data);
