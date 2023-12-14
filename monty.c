@@ -29,7 +29,8 @@ int main(int argc, char *argv[])
         token = strtok(buffer, " ");
         strcpy(command, token);
         printf("Command: %s\n", command);
-        if (token = strtok(NULL, " ") != NULL)
+        token = strtok(NULL, " ");
+        if (token != NULL)
         {
             data = atoi(token);
             printf("Number: %d\n", data);
