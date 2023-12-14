@@ -9,11 +9,11 @@
  * Return: the new node
 */
 
-void *push(stack_t **head, const int n)
+/**void *push(stack_t **head, const int n)
 {
-	dlistint_t *new_node = NULL;
+	stack_t *new_node = NULL;
 
-	new_node = malloc(sizeof(dlistint_t));
+	new_node = malloc(sizeof(stack_t));
 
 	if (new_node == NULL)
 		return (NULL);
@@ -34,5 +34,5 @@ void *push(stack_t **head, const int n)
 	*head = new_node;
 
 	return (new_node);
-}
+}*/
 
