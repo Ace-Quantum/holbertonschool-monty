@@ -9,6 +9,9 @@ int main(int argc, char *argv[])
     char *buffer = malloc(buffsize * sizeof(char));
     FILE *file;
     char *token;
+    char *command;
+    int data;
+
     if (argc < 2)
     {
         printf("Insert error message here\n");
@@ -24,10 +27,12 @@ int main(int argc, char *argv[])
     {
         printf("started while loop\n");
         token = strtok(buffer, " ");
-        while (token != NULL)
+        strcpy(command, token);
+        printf("Command: %s\n", command);
+        if (token = strtok(NULL, " "))
         {
-            printf("%s\n", token);
-            token = strtok(NULL, " ");
+            data = atoi(token);
+            printf("Number: %d\n", data);
         }
     }
 
