@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "lists.h"
+#include "monty.h"
 
 /**
  * add_dnodeint- adds a node at the head
