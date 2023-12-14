@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
     FILE *file;
     char *token = NULL;
     char *command = malloc(buffsize * sizeof(char));
-    int data;
+    int data, line_count = 0;
 
     if (buffer == NULL || command == NULL)
         return (0);
@@ -39,6 +39,8 @@ int main(int argc, char *argv[])
             data = atoi(token);
             printf("Number: %d\n", data);
         }
+        line_count++;
+        printf("Line count: %d\n", line_count);
     }
 
     fclose(file);
