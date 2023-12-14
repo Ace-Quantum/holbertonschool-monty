@@ -9,14 +9,18 @@ int main(int argc, char *argv[])
     char *buffer = malloc(buffsize * sizeof(char));
     FILE *file;
     char *token = NULL;
-    char *command = NULL;
+    char *command = malloc(buffsize * sizeof(char));
     int data;
 
+    if (buffer == NULL || command == NULL)
+        return (0);
+    
     if (argc < 2)
     {
         printf("Insert error message here\n");
         return(-1);
     }
+
     file = fopen(argv[1], "r");
     if (file == NULL)
         fprintf(stderr, "Unable to open file\n");
@@ -39,6 +43,7 @@ int main(int argc, char *argv[])
 
     fclose(file);
     free(buffer);
+    free(command);
 
     return(0);
 }
