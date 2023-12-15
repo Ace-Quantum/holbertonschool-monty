@@ -9,24 +9,26 @@
  * Return: the new node
 */
 
-void push(stack_t **head, const int n)
+void push(stack_t **head, int n)
 {
 	stack_t *new_node = NULL;
 
 	new_node = malloc(sizeof(stack_t));
 
 	if (new_node == NULL)
-		//return (NULL);
+		
+		return;
 
 	(*new_node).n = n;
 
 
 	if (*head == NULL)
 	{
-		(*new_node).next = NULL;
-		(*new_node).prev = NULL;
-		*head = new_node;
-		//return (new_node);
+		free(new_node);
+		(*head).next = NULL;
+		(*head).prev = NULL;
+		//*head = new_node;
+		return;
 	}
 
 	(*head)->prev = new_node;
