@@ -16,7 +16,7 @@ void push(stack_t **head, const int n)
 	new_node = malloc(sizeof(stack_t));
 
 	if (new_node == NULL)
-		return (NULL);
+		//return (NULL);
 
 	(*new_node).n = n;
 
@@ -25,7 +25,7 @@ void push(stack_t **head, const int n)
 		(*new_node).next = NULL;
 		(*new_node).prev = NULL;
 		*head = new_node;
-		return (new_node);
+		//return (new_node);
 	}
 
 	(*head)->prev = new_node;
@@ -38,7 +38,7 @@ void push(stack_t **head, const int n)
 
 void pall(stack_t *head)
 {
-	while (h != NULL)
+	while (head != NULL)
 	{
 		printf("%d\n", (*head).n);
 		head = (*head).next;
