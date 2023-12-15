@@ -25,8 +25,8 @@ void push(stack_t **head, int n)
 	if (*head == NULL)
 	{
 		free(new_node);
-		head->next = NULL;
-		head->prev = NULL;
+		*head->next = NULL;
+		*head->prev = NULL;
 		//*head = new_node;
 		return;
 	}
