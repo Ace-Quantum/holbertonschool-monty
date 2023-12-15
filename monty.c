@@ -40,13 +40,15 @@ int main(int argc, char *argv[])
             data = atoi(token);
             printf("Number: %d\n", data);
             push(&head, data);
+            line_count++;
+            continue;
             //Better call pall
                 //That joke actually applies elsewhere in the code
         }
         line_count++;
         printf("Line count: %d\n", line_count);
         //temporary if statement for the purposes of testing function
-        if (strcmp(command, "pall") == 0)
+        if (strcmp(command, "pall\n") == 0)
             pall(head);
         else
             printf("well fam idk what to tell you\n");
