@@ -9,7 +9,7 @@
  * Return: the new node
 */
 
-/**void *push(stack_t **head, const int n)
+void push(stack_t **head, const int n)
 {
 	stack_t *new_node = NULL;
 
@@ -33,6 +33,14 @@
 	(*new_node).prev = NULL;
 	*head = new_node;
 
-	return (new_node);
-}*/
+	//return (new_node);
+}
 
+void pall(stack_t *head)
+{
+	while (h != NULL)
+	{
+		printf("%d\n", (*head).n);
+		head = (*head).next;
+	}
+}

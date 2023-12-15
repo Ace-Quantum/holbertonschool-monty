@@ -11,6 +11,7 @@ int main(int argc, char *argv[])
     char *token = NULL;
     char *command = malloc(buffsize * sizeof(char));
     int data, line_count = 0;
+    stack_t *head = NULL;
 
     if (buffer == NULL || command == NULL)
         return (0);
@@ -38,9 +39,17 @@ int main(int argc, char *argv[])
         {
             data = atoi(token);
             printf("Number: %d\n", data);
+            push(&head, data);
+            //Better call pall
+                //That joke actually applies elsewhere in the code
         }
         line_count++;
         printf("Line count: %d\n", line_count);
+        //temporary if statement for the purposes of testing function
+        if (strcmp(command, 'pall') == 0)
+            pall(head);
+        else
+            printf("well fam idk what to tell you\n");
     }
 
     fclose(file);
