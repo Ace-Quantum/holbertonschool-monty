@@ -20,6 +20,7 @@ void push(stack_t **head, const int n)
 
 	(*new_node).n = n;
 
+
 	if (*head == NULL)
 	{
 		(*new_node).next = NULL;
@@ -32,6 +33,7 @@ void push(stack_t **head, const int n)
 	(*new_node).next = *head;
 	(*new_node).prev = NULL;
 	*head = new_node;
+	printf("Value of new head: %d\n", (*head).n);
 
 	//return (new_node);
 }
