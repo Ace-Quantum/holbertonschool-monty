@@ -25,20 +25,20 @@ int main(int argc, char *argv[])
     file = fopen(argv[1], "r");
     if (file == NULL)
         fprintf(stderr, "Unable to open file\n");
-    //printf("assigned file to variable\n");
-    //printf("here's the file name: %s\n", argv[1]);
+    printf("assigned file to variable\n");
+    printf("here's the file name: %s\n", argv[1]);
     
     while (fgets(buffer, buffsize, file) != NULL)
     {
-        //printf("started while loop\n");
+        printf("started while loop\n");
         token = strtok(buffer, " ");
         strcpy(command, token);
-        //printf("Command: %s\n", command);
+        printf("Command: %s\n", command);
         token = strtok(NULL, " ");
         if (token != NULL)
         {
             data = atoi(token);
-            //printf("Number: %d\n", data);
+            printf("Number: %d\n", data);
             push(&head, data);
             line_count++;
             continue;
@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
                 //That joke actually applies elsewhere in the code
         }
         line_count++;
-        //printf("Line count: %d\n", line_count);
+        printf("Line count: %d\n", line_count);
         //temporary if statement for the purposes of testing function
         if (strcmp(command, "pall\n") == 0)
             pall(head);
