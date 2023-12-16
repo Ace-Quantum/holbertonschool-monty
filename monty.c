@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
                 //That joke actually applies elsewhere in the code
         }
         line_count++;
-        printf("Line count: %d\n", line_count);
+        //printf("Line count: %d\n", line_count);
         //temporary if statement for the purposes of testing function
         if (strcmp(command, "pall\n") == 0)
             pall(head);
