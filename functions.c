@@ -25,6 +25,7 @@ void push(stack_t **head, int n)
 	if (*head == NULL)
 	{
 		free(new_node);
+		*head = malloc(sizeof(stack_t));
 		(*head)->n = n;
 		(*head)->next = NULL;
 		(*head)->prev = NULL;
