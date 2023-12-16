@@ -41,11 +41,15 @@ int main(int argc, char *argv[])
             //printf("Number: %d\n", data);
             push(&head, data);
             line_count++;
+            free(buffer);
+            free(command);
             continue;
             //Better call pall
                 //That joke actually applies elsewhere in the code
         }
         line_count++;
+        free(buffer);
+        free(command);
         //printf("Line count: %d\n", line_count);
         //temporary if statement for the purposes of testing function
         if (strcmp(command, "pall\n") == 0)
