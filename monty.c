@@ -41,8 +41,8 @@ int main(int argc, char *argv[])
             //printf("Number: %d\n", data);
             push(&head, data);
             line_count++;
-            free(buffer);
-            free(command);
+            //free(buffer);
+            //free(command);
             continue;
             //Better call pall
                 //That joke actually applies elsewhere in the code
