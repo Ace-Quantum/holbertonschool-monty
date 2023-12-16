@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
         if (token != NULL)
         {
             data = atoi(token);
-            printf("Number: %d\n", data);
+            //printf("Number: %d\n", data);
             push(&head, data);
             line_count++;
             continue;
