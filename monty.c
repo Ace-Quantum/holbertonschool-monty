@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
     file = fopen(argv[1], "r");
     if (file == NULL)
         fprintf(stderr, "Unable to open file\n");
-    printf("assigned file to variable\n");
+    //printf("assigned file to variable\n");
     printf("here's the file name: %s\n", argv[1]);
     
     while (fgets(buffer, buffsize, file) != NULL)
