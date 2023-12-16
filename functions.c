@@ -38,7 +38,7 @@ void push(stack_t **head, int n)
 	(*new_node).prev = NULL;
 	new_node->n = n;
 	*head = new_node;
-	printf("Value of new head: %d\n", (*new_node).n);
+	//printf("Value of new head: %d\n", (*new_node).n);
 
 	//return (new_node);
 }
