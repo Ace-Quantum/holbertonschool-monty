@@ -36,5 +36,6 @@ typedef struct instruction_s
 //functions
 void pall(stack_t *head);
 void push(stack_t **head, int n);
+void free_stack(stack_t *head);
 
 #endif

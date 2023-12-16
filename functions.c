@@ -51,3 +51,19 @@ void pall(stack_t *head)
 		head = (*head).next;
 	}
 }
+
+void free_stack(stack_t *head)
+{
+	stack_t *freer = head;
+
+	if (head == NULL)
+		return;
+
+	while ((*freer).next != NULL)
+	{
+		freer = (*freer).next;
+		free((*freer).prev);
+	}
+
+	free(freer);
+}

@@ -58,9 +58,11 @@ int main(int argc, char *argv[])
             printf("well fam idk what to tell you\n");
     }
 
-    fclose(file);
+    //fclose(file);
     free(buffer);
     free(command);
+    free_stack(head);
+    fclose(file);
 
     return(0);
 }
