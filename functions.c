@@ -19,7 +19,7 @@ void push(stack_t **head, int n)
 		
 		return;
 
-	(*new_node).n = n;
+	//(*new_node).n = n;
 
 
 	if (*head == NULL)
