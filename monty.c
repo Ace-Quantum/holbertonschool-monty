@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
     
     while (fgets(buffer, buffsize, file) != NULL)
     {
-        printf("started while loop\n");
+        //printf("started while loop\n");
         token = strtok(buffer, " ");
         strcpy(command, token);
         printf("Command: %s\n", command);
