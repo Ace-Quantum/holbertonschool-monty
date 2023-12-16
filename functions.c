@@ -19,9 +19,6 @@ void push(stack_t **head, int n)
 		
 		return;
 
-	//(*new_node).n = n;
-
-
 	if (*head == NULL)
 	{
 		free(new_node);
@@ -29,7 +26,6 @@ void push(stack_t **head, int n)
 		(*head)->n = n;
 		(*head)->next = NULL;
 		(*head)->prev = NULL;
-		//*head = new_node;
 		return;
 	}
 
@@ -38,9 +34,7 @@ void push(stack_t **head, int n)
 	(*new_node).prev = NULL;
 	new_node->n = n;
 	*head = new_node;
-	//printf("Value of new head: %d\n", (*new_node).n);
 
-	//return (new_node);
 }
 
 void pall(stack_t *head)

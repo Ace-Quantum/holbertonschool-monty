@@ -5,7 +5,6 @@
 
 int main(int argc, char *argv[])
 {
-    //Pushing this w/ print statements
     size_t buffsize = 1024;
     char *buffer = malloc(buffsize * sizeof(char));
     FILE *file;
@@ -26,40 +25,27 @@ int main(int argc, char *argv[])
     file = fopen(argv[1], "r");
     if (file == NULL)
         fprintf(stderr, "Unable to open file\n");
-    //printf("assigned file to variable\n");
-    //printf("here's the file name: %s\n", argv[1]);
     
     while (fgets(buffer, buffsize, file) != NULL)
     {
-        //printf("started while loop\n");
         token = strtok(buffer, " ");
         strcpy(command, token);
-        //printf("Command: %s\n", command);
         token = strtok(NULL, " ");
         if (token != NULL)
         {
             data = atoi(token);
-            //printf("Number: %d\n", data);
             push(&head, data);
             line_count++;
-            //free(buffer);
-            //free(command);
             continue;
-            //Better call pall
-                //That joke actually applies elsewhere in the code
         }
         line_count++;
-        //free(buffer);
-        //free(command);
-        //printf("Line count: %d\n", line_count);
-        //temporary if statement for the purposes of testing function
+//temp if statement just to test the command
         if (strcmp(command, "pall\n") == 0)
             pall(head);
         else
             printf("well fam idk what to tell you\n");
     }
 
-    //fclose(file);
     free(buffer);
     free(command);
     free_stack(head);
