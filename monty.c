@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
         //printf("started while loop\n");
         token = strtok(buffer, " ");
         strcpy(command, token);
-        printf("Command: %s\n", command);
+        //printf("Command: %s\n", command);
         token = strtok(NULL, " ");
         if (token != NULL)
         {
