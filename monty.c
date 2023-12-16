@@ -5,6 +5,7 @@
 
 int main(int argc, char *argv[])
 {
+    //Pushing this w/ print statements
     size_t buffsize = 1024;
     char *buffer = malloc(buffsize * sizeof(char));
     FILE *file;
