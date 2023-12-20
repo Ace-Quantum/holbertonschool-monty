@@ -11,6 +11,7 @@ char *spacing(char *str)
 	int trackstr = strlen(str);
 	char *trimstr = NULL;
 
+    printf("string before trim: %s\n", str)
 	trimstr = calloc(trackstr, sizeof(char));
 	if(!trimstr)
 	{
@@ -43,5 +44,6 @@ char *spacing(char *str)
 			x++;
 		}
 	}
+    printf("string after trim: %s\n", trimstr);
 	return (trimstr);
 }
