@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
     char *token = NULL;
     char *command;
     char *no_space_line;
-    int data, line_count = 0, compcheck;
+    int data, line_count = 0, compcheck = 0;
     stack_t *head = NULL;
 
     if (buffer == NULL || command == NULL)
