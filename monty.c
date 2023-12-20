@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
     int data, line_count = 0, compcheck = 0;
     stack_t *head = NULL;
 
-    if (buffer == NULL || command == NULL)
+    if (buffer == NULL)
         return (0);
     
     if (argc < 2)
