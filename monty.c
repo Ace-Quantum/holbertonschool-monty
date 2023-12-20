@@ -55,6 +55,7 @@ int main(int argc, char *argv[])
         //else
             //printf("well fam idk what to tell you\n");
     free(buffer);
+    free(no_space_line);
     }
 
     //free(buffer);
