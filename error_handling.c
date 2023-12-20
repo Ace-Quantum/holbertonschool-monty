@@ -11,7 +11,7 @@ char *spacing(char *str)
 	int trackstr = strlen(str);
 	char *trimstr = NULL;
 
-    printf("string before trim: %s\n", str)
+    printf("string before trim: %s\n", str);
 	trimstr = calloc(trackstr, sizeof(char));
 	if(!trimstr)
 	{
