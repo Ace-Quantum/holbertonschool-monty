@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
             if (token == NULL)
             {
                 //return error code
-                return
+                return;
             }
             data = atoi(token);
             push(&head, data);
