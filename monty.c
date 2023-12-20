@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
         }
         line_count++;
 //temp if statement just to test the command
-        if (strcmp(command, "pall\n") == 0)
+        if (strcmp(command, "pall") == 0)
             pall(head);
         //else
             //printf("well fam idk what to tell you\n");
