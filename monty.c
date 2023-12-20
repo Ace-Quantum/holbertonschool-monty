@@ -26,10 +26,11 @@ int main(int argc, char *argv[])
 
     file = fopen(argv[1], "r");
     if (file == NULL)
+    {
         fprintf(stderr, "Unable to open file\n");
         free(buffer);
         return (-1);
-    
+    }
     while (getline(&buffer, &buffsize, file) != -1)
     {
         no_space_line = spacing(buffer);
