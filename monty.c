@@ -20,12 +20,15 @@ int main(int argc, char *argv[])
     if (argc < 2)
     {
         printf("Insert error message here\n");
+        free(buffer);
         return(-1);
     }
 
     file = fopen(argv[1], "r");
     if (file == NULL)
         fprintf(stderr, "Unable to open file\n");
+        free(buffer);
+        return (-1);
     
     while (getline(&buffer, &buffsize, file) != -1)
     {
