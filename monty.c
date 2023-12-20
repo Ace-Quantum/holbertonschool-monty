@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
     char *token = NULL;
     char *command;
     char *no_space_line;
-    int data, line_count = 0;
+    int data, line_count = 0, compcheck;
     stack_t *head = NULL;
 
     if (buffer == NULL || command == NULL)
@@ -36,7 +36,8 @@ int main(int argc, char *argv[])
         token = strtok(no_space_line, " ");
         strcpy(command, token);
         //token = strtok(NULL, " ");
-        if (strcmp(command, "push") == 0)
+        compcheck = strcmp(command, "push");
+        if (compcheck == 0)
         {
             token = strtok(NULL, " ");
             //check if num here
