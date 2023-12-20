@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
     if (file == NULL)
         fprintf(stderr, "Unable to open file\n");
     
-    while (fgets(buffer, buffsize, file) != NULL)
+    while (getline(&buffer, &buffsize, file) != -1)
     {
         no_space_line = spacing(buffer);
         token = strtok(no_space_line, " ");
@@ -54,8 +54,8 @@ int main(int argc, char *argv[])
             pall(head);
         //else
             //printf("well fam idk what to tell you\n");
-    free(buffer);
-    free(no_space_line);
+    //free(buffer);
+    //free(no_space_line);
     }
 
     //free(buffer);
