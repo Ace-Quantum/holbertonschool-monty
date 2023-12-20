@@ -39,6 +39,7 @@ int main(int argc, char *argv[])
             if (token == NULL)
             {
                 //return error code
+                free(buffer);
                 return (-1);
             }
             data = atoi(token);
@@ -52,6 +53,7 @@ int main(int argc, char *argv[])
             pall(head);
         //else
             //printf("well fam idk what to tell you\n");
+    free(buffer);
     }
 
     free(buffer);
