@@ -28,6 +28,7 @@ int main(int argc, char *argv[])
     
     while (fgets(buffer, buffsize, file) != NULL)
     {
+        buffer = spacing(buffer);
         token = strtok(buffer, " ");
         strcpy(command, token);
         //token = strtok(NULL, " ");
@@ -49,8 +50,8 @@ int main(int argc, char *argv[])
 //temp if statement just to test the command
         if (strcmp(command, "pall\n") == 0)
             pall(head);
-        else
-            printf("well fam idk what to tell you\n");
+        //else
+            //printf("well fam idk what to tell you\n");
     }
 
     free(buffer);

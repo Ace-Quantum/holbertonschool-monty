@@ -38,4 +38,7 @@ void pall(stack_t *head);
 void push(stack_t **head, int n);
 void free_stack(stack_t *head);
 
+//error handling
+char *spacing(char *str);
+
 #endif
