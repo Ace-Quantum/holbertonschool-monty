@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
         {
             token = strtok(NULL, " ");
             //check if num here
-            if (token == NULL);
+            if (token == NULL)
             {
                 //return error code
                 return
