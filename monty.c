@@ -30,9 +30,16 @@ int main(int argc, char *argv[])
     {
         token = strtok(buffer, " ");
         strcpy(command, token);
-        token = strtok(NULL, " ");
-        if (token != NULL)
+        //token = strtok(NULL, " ");
+        if (strcmp(command, "push") == 0)
         {
+            token = strtok(NULL, " ");
+            //check if num here
+            if (token == NULL);
+            {
+                //return error code
+                return
+            }
             data = atoi(token);
             push(&head, data);
             line_count++;
