@@ -10,6 +10,7 @@ int main(int argc, char *argv[])
     FILE *file;
     char *token = NULL;
     char *command = malloc(buffsize * sizeof(char));
+    char *no_space_line;
     int data, line_count = 0;
     stack_t *head = NULL;
 
@@ -28,8 +29,8 @@ int main(int argc, char *argv[])
     
     while (fgets(buffer, buffsize, file) != NULL)
     {
-        buffer = spacing(buffer);
-        token = strtok(buffer, " ");
+        no_space_line = spacing(buffer);
+        token = strtok(no_space_line, " ");
         strcpy(command, token);
         //token = strtok(NULL, " ");
         if (strcmp(command, "push") == 0)
