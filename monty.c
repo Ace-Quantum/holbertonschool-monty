@@ -14,8 +14,6 @@ int main(int argc, char *argv[])
     stack_t *head = NULL;
     if (buffer == NULL)
         return (0);
-    
-    printf("seg fault here?");
 
     if (argc < 2)
     {
