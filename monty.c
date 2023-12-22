@@ -34,16 +34,13 @@ int main(int argc, char *argv[])
 
         if (strcmp(command, "push") == 0)
         {
-            token = strtok(NULL, " ");
+            token = strtok(NULL, " \n");
             
             if (token == NULL)
             {
                 printf("no second command found");
-                free(buffer);
-                free(command);
-                free_stack(head);
-		        fclose(file);
-                return (-1);
+                
+                exit (EXIT_FAILURE);
             }
 
             data = atoi(token);
