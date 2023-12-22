@@ -31,10 +31,12 @@ int main(int argc, char *argv[])
         token = strtok(buffer, " ");
 	
 	    command = strdup(token);
+        token = NULL;
 
         if (strcmp(command, "push") == 0)
         {
-            token = strtok(NULL, " \n");
+
+            token = strtok(0, " \n");
             
             if (token == NULL)
             {
