@@ -15,6 +15,8 @@ int main(int argc, char *argv[])
     if (buffer == NULL)
         return (0);
     
+    printf("seg fault here?");
+
     if (argc < 2)
     {
         printf("Insert error message here\n");
