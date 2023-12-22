@@ -49,9 +49,12 @@ int main(int argc, char *argv[])
                 exit (EXIT_FAILURE);
             }
 
-            data = atoi(token);
-            push(&head, data);
-            line_count++;
+            if (token != NULL)
+            {
+                data = atoi(token);
+                push(&head, data);
+                line_count++;
+            }
 	        free(command);
             command = NULL;
             continue;
