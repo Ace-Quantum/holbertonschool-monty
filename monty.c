@@ -19,8 +19,9 @@ int main(int argc, char *argv[])
     {
         printf("Insert error message here\n");
         free(buffer);
-	return(-1);
+	    return(-1);
     }
+
     file = fopen(argv[1], "r");
     if (file == NULL)
         fprintf(stderr, "Unable to open file\n");
@@ -36,7 +37,7 @@ int main(int argc, char *argv[])
         if (strcmp(command, "push") == 0)
         {
 
-            token = strtok(0, " \n");
+            token = strtok(NULL, " \n");
             
             if (token == NULL)
             {
