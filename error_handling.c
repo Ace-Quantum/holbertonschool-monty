@@ -45,5 +45,6 @@ char *spacing(char *str)
 		}
 	}
     //printf("string after trim: %s\n", trimstr);
+	free(str);
 	return (trimstr);
 }

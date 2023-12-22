@@ -33,14 +33,13 @@ int main(int argc, char *argv[])
 	command = strdup(token);
 
         strcpy(command, token);
-        //token = strtok(NULL, " ");
+
         if (strcmp(command, "push") == 0)
         {
             token = strtok(NULL, " ");
-            //check if num here
+            
             if (token == NULL)
             {
-                //return error code
 		free(buffer);
 		free(command);
 		free_stack(head);
@@ -54,11 +53,10 @@ int main(int argc, char *argv[])
             continue;
         }
         line_count++;
-//temp if statement just to test the command
+
         if (strcmp(command, "pall") == 0)
             pall(head);
-        //else
-            //printf("well fam idk what to tell you\n");
+
     }
     free(buffer);
     free(command);
