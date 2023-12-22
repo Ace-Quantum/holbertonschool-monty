@@ -11,15 +11,23 @@
 
 void push(stack_t **head, int n)
 {
-	stack_t *new_node = NULL;
+	stack_t *new_node = malloc(sizeof(stack_t));
 
-	new_node = malloc(sizeof(stack_t));
-
-	if (new_node == NULL)
-		
+	if (new_node == NULL)	
 		return;
 
-	if (*head == NULL)
+	new_node->n = n;
+	new_node->next = *head;
+	new_node->prev = NULL;
+
+	if (*head != NULL)
+		(*head)->prev = new_node;
+
+	*head = new_node;
+
+	return;
+
+	/*if (*head == NULL)
 	{
 		free(new_node);
 		*head = malloc(sizeof(stack_t));
@@ -33,7 +41,7 @@ void push(stack_t **head, int n)
 	(*new_node).next = *head;
 	(*new_node).prev = NULL;
 	new_node->n = n;
-	*head = new_node;
+	*head = new_node;*/
 
 }
 
