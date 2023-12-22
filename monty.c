@@ -50,6 +50,7 @@ int main(int argc, char *argv[])
             data = atoi(token);
             push(&head, data);
             line_count++;
+	    free(command);
             continue;
         }
         line_count++;
