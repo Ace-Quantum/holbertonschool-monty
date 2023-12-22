@@ -9,43 +9,34 @@ int main(int argc, char *argv[])
     char *buffer = malloc(buffsize * sizeof(char));
     FILE *file;
     char *token = NULL;
-    char *command = NULL;
-    char *no_space_line;
-    int data, line_count = 0, compcheck = 0;
+    char *command = malloc(buffsize * sizeof(char));
+    int data, line_count = 0;
     stack_t *head = NULL;
-
-    if (buffer == NULL)
+    if (buffer == NULL || command == NULL)
         return (0);
     
     if (argc < 2)
     {
         printf("Insert error message here\n");
-        free(buffer);
         return(-1);
     }
-
     file = fopen(argv[1], "r");
     if (file == NULL)
-    {
         fprintf(stderr, "Unable to open file\n");
-        free(buffer);
-        return (-1);
-    }
-    while (getline(&buffer, &buffsize, file) != -1)
+    
+    while (fgets(buffer, buffsize, file) != NULL)
     {
-        no_space_line = spacing(buffer);
-        token = strtok(no_space_line, " ");
+        buffer = spacing(buffer);
+        token = strtok(buffer, " ");
         strcpy(command, token);
         //token = strtok(NULL, " ");
-        compcheck = strcmp(command, "push");
-        if (compcheck == 0)
+        if (strcmp(command, "push") == 0)
         {
             token = strtok(NULL, " ");
             //check if num here
             if (token == NULL)
             {
                 //return error code
-                free(buffer);
                 return (-1);
             }
             data = atoi(token);
@@ -59,13 +50,10 @@ int main(int argc, char *argv[])
             pall(head);
         //else
             //printf("well fam idk what to tell you\n");
-    //free(buffer);
-    free(no_space_line);
     }
-
     free(buffer);
+    free(command);
     free_stack(head);
     fclose(file);
-
     return(0);
 }
