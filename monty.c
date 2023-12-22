@@ -29,8 +29,9 @@ int main(int argc, char *argv[])
     {
         buffer = spacing(buffer);
         token = strtok(buffer, " ");
-	
-	    command = strdup(token);
+
+        if (token != NULL)
+	        command = strdup(token);
 
         if (strcmp(command, "push") == 0)
         {
@@ -57,6 +58,9 @@ int main(int argc, char *argv[])
 
         if (strcmp(command, "pall") == 0)
             pall(head);
+
+        free(command);
+        command = NULL;
 
     }
     free(buffer);
