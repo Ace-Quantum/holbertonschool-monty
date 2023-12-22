@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
     char *buffer = malloc(buffsize * sizeof(char));
     FILE *file;
     char *token = NULL;
-    char *command = malloc(buffsize * sizeof(char));
+    char *command = NULL;
     int data, line_count = 0;
     stack_t *head = NULL;
     if (buffer == NULL || command == NULL)
