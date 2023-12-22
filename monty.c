@@ -30,9 +30,7 @@ int main(int argc, char *argv[])
         buffer = spacing(buffer);
         token = strtok(buffer, " ");
 	
-	command = strdup(token);
-
-        strcpy(command, token);
+	    command = strdup(token);
 
         if (strcmp(command, "push") == 0)
         {
@@ -40,12 +38,14 @@ int main(int argc, char *argv[])
             
             if (token == NULL)
             {
-		free(buffer);
-		free(command);
-		free_stack(head);
-		fclose(file);
+                printf("no second command found");
+                free(buffer);
+                free(command);
+                free_stack(head);
+		        fclose(file);
                 return (-1);
             }
+
             data = atoi(token);
             push(&head, data);
             line_count++;
