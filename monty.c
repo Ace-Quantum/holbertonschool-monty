@@ -12,22 +12,26 @@ int main(int argc, char *argv[])
     char *command = NULL;
     int data, line_count = 0;
     stack_t *head = NULL;
-    if (buffer == NULL || command == NULL)
+    if (buffer == NULL)
         return (0);
     
     if (argc < 2)
     {
         printf("Insert error message here\n");
-        return(-1);
+        free(buffer);
+	return(-1);
     }
     file = fopen(argv[1], "r");
     if (file == NULL)
         fprintf(stderr, "Unable to open file\n");
     
-    while (fgets(buffer, buffsize, file) != NULL)
+    while (getline(&buffer, &buffsize, file) != -1)
     {
         buffer = spacing(buffer);
         token = strtok(buffer, " ");
+	
+	command = strdup(token);
+
         strcpy(command, token);
         //token = strtok(NULL, " ");
         if (strcmp(command, "push") == 0)
@@ -37,6 +41,10 @@ int main(int argc, char *argv[])
             if (token == NULL)
             {
                 //return error code
+		free(buffer);
+		free(command);
+		free_stack(head);
+		fclose(file);
                 return (-1);
             }
             data = atoi(token);
