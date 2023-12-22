@@ -31,7 +31,6 @@ int main(int argc, char *argv[])
         token = strtok(buffer, " ");
 	
 	    command = strdup(token);
-        token = NULL;
 
         if (strcmp(command, "push") == 0)
         {
@@ -41,6 +40,8 @@ int main(int argc, char *argv[])
             if (token == NULL)
             {
                 printf("no second command found");
+                free(command);
+                command = NULL;
                 
                 exit (EXIT_FAILURE);
             }
@@ -48,7 +49,8 @@ int main(int argc, char *argv[])
             data = atoi(token);
             push(&head, data);
             line_count++;
-	    free(command);
+	        free(command);
+            command = NULL;
             continue;
         }
         line_count++;
