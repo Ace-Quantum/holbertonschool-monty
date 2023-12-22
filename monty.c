@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
     while (getline(&buffer, &buffsize, file) != -1)
     {
         buffer = spacing(buffer);
-        printf("line after spacecheck: %s", buffer);
+        /*printf("line after spacecheck: %s", buffer);*/
         token = strtok(buffer, " ");
 
         if (token != NULL)
